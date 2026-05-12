@@ -1,0 +1,109 @@
+/* Google Map iframe styling for accessibility and consistency */
+.contact-map {
+  border: 0;
+  width: 100%;
+  height: 450px;
+  display: block;
+}
+/*
+Template Name: The Prop
+File: Layout CSS
+Author: TemplatesOnWeb
+Author URI: https://www.templateonweb.com/
+Licence: <a href="https://www.templateonweb.com/license">Website Template Licence</a>
+*/
+/*********************contact************/
+.center_list {
+background-image: url(../img/2.jpg);
+background-position: center;
+}
+.center_blog {
+padding-top:100px;
+padding-bottom:100px;
+background:#95c41f1f; 
+}
+#contact_page{
+ padding-top:50px;
+ padding-bottom:50px; 
+  }
+.contact_page_1i span i{
+  color:#95c41f;
+  font-size:45px;
+  }
+.contact_page_1i {
+ border:1px solid #dae9b6;
+ padding:20px 15px; 
+  }
+.contact_page_1i h4{
+  margin-top:20px;
+  }
+  
+.blog_d_page_li3 hr{
+  margin-left:0;
+  }
+.contact_page_2{
+ margin-top:40px; 
+  }
+.blog_d_page_li3i .form-control{
+ margin-bottom:10px; 
+ height:45px;
+  }
+.form_1{
+ height:135px!important; 
+  }
+.contact_page_2i .form-control{
+  height:50px;
+  margin-top:15px;
+  }
+.contact_page_2i {
+background:#95c41f1f; 
+padding:15px 15px 25px 15px;
+  }
+.contact_page_2ii{
+ background:#376738;
+ padding-top:8px;
+ padding-bottom:8px;
+ text-align:center;
+  }
+.contact_page_2ii ul a{
+  background:#95c41f;
+  }
+.contact_page_3{
+ margin-top:30px; 
+  }
+.about_h hr{
+  border-color:#95c41f;
+  border-width:3px;
+  width:10%;
+  }
+/*********************contact_end****************/
+
+@media screen and (max-width : 767px){
+.contact_page_1i {
+margin-top:10px; 
+ }
+.blog_d_page_li3 {
+text-align:center;
+margin-bottom:15px;
+ }
+.about_h hr{
+margin-left:auto; 
+ }
+.contact_page_2i {
+text-align:center; 
+ }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+
+ }
+@media (min-width:992px) and (max-width:1200px) {
+
+ }
+@media (min-width:1201px) and (max-width:1350px) {
+
+ }
+
+
+
+

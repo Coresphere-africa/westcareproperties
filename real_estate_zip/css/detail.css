@@ -1,0 +1,230 @@
+/*
+Template Name: The Prop
+File: Layout CSS
+Author: TemplatesOnWeb
+Author URI: https://www.templateonweb.com/
+Licence: <a href="https://www.templateonweb.com/license">Website Template Licence</a>
+*/
+/*********************detail****************/
+.center_list {
+    background-image: url(../img/1.jpg);
+    background-position: center;
+}
+#detail{
+padding-top:50px;
+padding-bottom:50px; 
+ }
+.detail_1l1 h5 i{
+margin-right:5px; 
+ }
+.detail_1l1  h3{
+color:#000; 
+ }
+.detail_1l1{
+padding:15px 20px 20px 20px;
+background:#95c41f1f; 
+ }
+.detail_1l2{
+padding:20px 20px 20px 20px;
+background:#95c41f1f;
+margin-top:30px; 
+ }
+#main_area .thumbnail{
+margin-bottom:0;
+padding:0;
+border:none; 
+ }
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-prev, .carousel-control .icon-next{
+background:#fff;
+width:50px;
+height:50px;
+font-size:20px;
+line-height:50px;
+border-radius:0;
+color:#95c41f;
+ }
+#main_area .carousel-control{
+background:none;
+opacity:1; 
+ }
+#main_area .glyphicon-chevron-left:hover{
+background: #95c41f;
+color:#fff;
+ }
+#main_area .glyphicon-chevron-right:hover{
+background: #95c41f;
+color:#fff;
+ }
+ 
+.detail_1l3 ul{
+ border:none;
+ margin-bottom:30px;
+  }
+.detail_1l3 ul li{
+ display:inline-block;
+ }
+.detail_1l3 ul li a{
+background:#fff!important;
+color:#000!important;
+font-size:16px;
+margin-right:2px;
+margin-left:2px;
+border-radius:3px;
+padding:8px 12px;
+display:block;
+  }
+.detail_1l3 ul li a:hover{
+   background:#95c41f!important;
+   color:#fff!important;
+  }
+.nav_1>li.active>a, .nav_1>li.active>a:hover, .nav_1>li.active>a:focus{
+  background:#95c41f!important;
+  color:#fff!important;
+  }
+.detail_1l3{
+padding:20px 20px 20px 20px;
+background:#95c41f1f;
+margin-top:30px; 
+ }
+.home_inner_i h5 i {
+    margin-right: 5px;
+}
+.home_inner_i{
+margin-top:20px; 
+ }
+table {
+    width: 100%;
+    margin-top: 20px;
+}
+td, th {
+    border: 1px solid #bcff14;
+    padding: 10px;
+	font-weight:bold;
+}
+.detail_1l4{
+padding:20px 20px 20px 20px;
+background:#95c41f1f;
+margin-top:30px; 
+ }
+.detail_1l4i{
+margin-top:20px; 
+border-bottom:1px solid #bcff14;
+padding-bottom:20px;
+ }
+.detail_1l5{
+padding:20px 20px 20px 20px;
+background:#95c41f1f;
+margin-top:30px; 
+ }
+.detail_1l5 .form-control {
+    height: 45px;
+    color: #333;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.detail_1l5 .form_1 {
+    height: 180px;
+}
+.center_main_1r{
+background:#95c41f1f;
+padding:20px 15px;
+ }
+.center_main_1r .form-control{
+margin-top:15px;
+font-size:16px;
+ }
+.center_main_1ri .input-group{
+margin-top:15px; 
+ }
+.detail_1r .footer_1i1{
+ margin-top:30px;
+ padding:20px 15px;
+ background:#95c41f1f;
+ }
+.detail_1ri1{
+ margin-top:30px;
+ padding:20px 15px;
+ background:#95c41f1f; 
+ }
+.detail_1ri1 h6{
+border-bottom:1px dashed #dae9b6; 
+padding-bottom:15px;
+ }
+.detail_1ri1 ul li a {
+background:#95c41f; 
+}
+.detail_1ri2{
+ margin-top:30px;
+ padding:20px 15px;
+ background:#95c41f1f; 
+ }
+.detail_1ri2 .form-control{
+border-radius:0;
+height:50px;
+margin-top:10px; 
+font-size:16px;
+ }
+.home_inner_i  h5{
+color:#000; 
+ }
+
+/*********************detail_end****************/
+
+@media screen and (max-width : 767px){
+.detail_1l1 {
+text-align:center;
+ }
+.detail_1l1 h3 span{
+float:none!important;
+ }
+.detail_1l1 h5 span{
+float:none!important;
+ }
+#main_area ul{
+display:none; 
+ }
+#main_area img{
+min-height:200px; 
+ }
+#main_area .carousel-control{
+top:40%!important; 
+bottom:auto!important;
+ }
+.detail_1l3 ul li{
+margin-bottom:8px; 
+ }
+.detail_1l3 {
+text-align:center;
+padding:10px; 
+ }
+.home_inner_i h5{
+margin-top:10px!important; 
+ }
+table{
+text-align:left;
+ }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+.detail_1l3 ul li{
+margin-bottom:8px; 
+ }
+.center_main_1ri .input-group .btn{
+ padding:6px 2px;
+ }
+ }
+@media (min-width:992px) and (max-width:1200px) {
+.detail_1l3 ul li{
+margin-bottom:8px; 
+ }
+.center_main_1ri .input-group .btn{
+ padding:6px 10px;
+ }
+ }
+@media (min-width:1201px) and (max-width:1350px) {
+
+ }
+
+
+
+

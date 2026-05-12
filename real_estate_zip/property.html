@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Westcare Properties Ltd - Submit Property</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/global.css" rel="stylesheet">
+	<link href="css/property.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+	<script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/shared-data.js"></script>
+	<script src="js/auth-global.js"></script>
+	<script src="js/whatsapp-button.js"></script>
+  </head>
+  
+<body>
+<section id="top">
+ <div class="container">
+  <div class="row">
+   <div class="top_1 clearfix">
+    <div class="col-sm-6">
+	<div class="top_1l clearfix">
+	 <ul class="mgt">
+	   <li><a class="col font_14" href="tel:+254723466916"><i class="fa fa-phone col_1"></i> +254 723 466916</a></li>
+	  <li><a class="col font_14" href="mailto:info@westcare-properties.com"><i class="fa fa-envelope col_1"></i> info@westcare-properties.com</a></li>
+	 </ul>
+	</div>
+	</div>
+	<div class="col-sm-6">
+	 <div class="top_1l text-right clearfix">
+	  <ul class="mgt">
+	   <li><a class="col font_13" href="#login" data-toggle="modal" data-target="#globalLoginModal"><i class="fa fa-sign-in col_1"></i> LOGIN</a></li>
+	   <li><a class="col font_13" href="#"><i class="fa fa-user col_1"></i>  REGISTER</a></li>
+	  </ul>
+	 </div>
+	</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="header" class="clearfix cd-secondary-nav">
+	<nav class="navbar">
+		<div class="container">
+		    <div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"> <i class="fa fa-home"></i>  Westcare <span>Properties Ltd</span> </a>
+			</div>
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+				<li><a class="m_tag" href="index.html">Home</a></li>
+				<li class="dropdown">
+					  <a class="m_tag" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Property<span class="caret"></span></a>
+					<ul class="dropdown-menu drop_3" role="list">
+						<li><a href="listing.html">Property Listing</a></li>
+						<li><a class="border_none" href="detail.html">Property Detail</a></li>
+					  </ul>
+                    </li>
+				
+				    <li class="dropdown">
+					  <a class="m_tag" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Agent<span class="caret"></span></a>
+					<ul class="dropdown-menu drop_3" role="list">
+						<li><a class="border_none" href="agent_detail.html">Agent Detail</a></li>
+					  </ul>
+                    </li>
+					
+				  <li class="dropdown">
+					  <a class="m_tag" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Blog<span class="caret"></span></a>
+					<ul class="dropdown-menu drop_3" role="list">
+						<li><a href="blog.html">Blog</a></li>
+						<li><a class="border_none" href="blog_detail.html">Blog Detail</a></li>
+					  </ul>
+                    </li>
+				  <li><a class="m_tag" href="about.html">About Us</a></li>
+				  <li><a class="m_tag" href="services.html">Services</a></li>
+				<li><a class="m_tag" href="contact.html">Contact</a></li>
+				<li><a class="m_tag button_1 mgt" href="property.html">Submit Property</a></li>
+			</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	
+	</section>
+	
+<section id="center" class="center_list clearfix">
+<div class="center_list_m clearfix">
+ <div class="container">
+  <div class="row">
+   <div class="center_list_1 text-center clearfix">
+    <div class="col-sm-12">
+	 <h3 class="mgt col">SUBMIT PROPERTY</h3>
+	 <h5 class="col"><a class="col" href="#">Home</a> <span>/</span> Submit Property</h5>
+	</div>
+   </div>
+  </div>
+ </div>
+</div>
+</section>
+
+<section id="prop">
+ <div class="container">
+  <div class="row">
+ <form class="submit-form" method="post" action="#" enctype="multipart/form-data">
+ <div class="submit_1 mgt clearfix">
+    <h2 class="mgt col_4 text-center">Submit Property</h2>
+ 	<h5>Property Title</h5>
+	<label for="property-title" class="sr-only">Property Title</label>
+	<input id="property-title" name="title" class="form-control" placeholder="Property Title" type="text" required title="Property Title">
+ 	<h5>Property Description</h5>
+	<label for="property-description" class="sr-only">Property Description</label>
+	<textarea id="property-description" name="description" placeholder="Property Description" class="form-control form_o" required title="Property Description"></textarea>
+	<div class="submit_1i clearfix">
+		 <div class="col-sm-4 space_left">
+			<div class="submit_1i1 clearfix">
+				<h5>Type</h5>
+				<label for="property-type" class="sr-only">Transaction Type</label>
+				<select id="property-type" name="type" class="form-control" title="Transaction Type">
+								 <option value="">Select Type</option>
+								 <option value="sale">Sale</option>
+								 <option value="rent">Rent</option>
+								 <option value="land">Land</option>
+								 <option value="commercial">Commercial</option>
+		 </select>
+			</div>
+		 </div>
+	 <div class="col-sm-4 space_all">
+	  <div class="submit_1i1 clearfix">
+	    <h5>Type</h5>
+		<label for="property-category" class="sr-only">Property Category</label>
+		<select id="property-category" class="form-control" title="Property Category">
+				 <option>Select Type</option>
+				 <option>House</option>
+				 <option>Commercial</option>
+				 <option>Apartment</option>
+				 <option>Garage</option>
+     </select>
+	  </div>
+	 </div>
+	 <div class="col-sm-4 space_right">
+	  <div class="submit_1i1 clearfix">
+	    <h5>Rooms</h5>
+		<label for="property-rooms" class="sr-only">Rooms</label>
+		<select id="property-rooms" class="form-control" title="Rooms">
+				 <option>Select Type</option>
+				 <option>1</option>
+				 <option>2</option>
+				 <option>3</option>
+				 <option>4</option>
+     </select>
+	  </div>
+	 </div>
+	</div>
+	<div class="submit_1i clearfix">
+	 <div class="col-sm-6 space_left">
+			<div class="submit_1i1 clearfix">
+				<h5>Price</h5>
+				<label for="property-price" class="sr-only">Price (KES)</label>
+				<input id="property-price" name="price" class="form-control" placeholder="Price (KES)" type="text" title="Price (KES)">
+			</div>
+	 </div>
+	 <div class="col-sm-6 space_right">
+	  <div class="submit_1i1 clearfix">
+	    <h5>Area</h5>
+		<label for="property-area" class="sr-only">Area (Sqft)</label>
+		<input id="property-area" class="form-control" placeholder="Sqft" type="text" title="Area (Sqft)">
+	  </div>
+	 </div>
+	</div>
+   </div>
+   <div class="submit_1 clearfix">
+     <h4 class="mgt col_1">Property Media</h4>
+	 <hr>
+	<div class="submit_1ii clearfix">
+	 <span class="span_1"><i class="fa fa-cloud-upload"></i></span>
+	 <h5>Upload Images</h5>
+	<label for="property-images" class="sr-only">Upload Images</label>
+	<input id="property-images" type="file" name="images[]" accept="image/*" multiple title="Upload Images">
+	</div>
+   </div>
+   <div class="submit_1 clearfix">
+    <h4 class="mgt col_1">Property Location</h4>
+	<hr>
+    <div class="submit_1i clearfix">
+ 	 <div class="col-sm-6 space_left">
+ 	  <div class="submit_1i1 clearfix">
+ 	    <h5 class="mgt">Address</h5>
+		<label for="property-address" class="sr-only">Address</label>
+		<input id="property-address" name="address" class="form-control" placeholder="Enter Address" type="text" title="Address">
+ 	  </div>
+ 	 </div>
+ 	 <div class="col-sm-6 space_right">
+ 	  <div class="submit_1i1 clearfix">
+ 	    <h5 class="mgt">Location/City</h5>
+		<label for="property-city" class="sr-only">City</label>
+		<input id="property-city" name="city" class="form-control" placeholder="City (e.g., Nairobi)" type="text" title="City">
+ 	  </div>
+ 	 </div>
+ 	</div>
+	<div class="submit_1i clearfix">
+	 <div class="col-sm-6 space_left">
+	  <div class="submit_1i1 clearfix">
+	    <h5>State</h5>
+		<label for="property-state" class="sr-only">State</label>
+		<input id="property-state" class="form-control" placeholder="Enter Your State" type="text" title="State">
+	  </div>
+	 </div>
+	 <div class="col-sm-6 space_right">
+	  <div class="submit_1i1 clearfix">
+	    <h5>Country</h5>
+		<label for="property-country" class="sr-only">Country</label>
+		<input id="property-country" class="form-control" placeholder="Enter Your Country" type="text" title="Country">
+	  </div>
+	 </div>
+	</div>
+    <div class="submit_1i clearfix">
+ 	 <div class="col-sm-6 space_left">
+ 	  <div class="submit_1i1 clearfix">
+ 	    <h5>Google Maps Latitude</h5>
+		<label for="property-latitude" class="sr-only">Latitude</label>
+		<input id="property-latitude" name="latitude" class="form-control" placeholder="Latitude" type="text" title="Latitude">
+ 	  </div>
+ 	 </div>
+ 	 <div class="col-sm-6 space_right">
+ 	  <div class="submit_1i1 clearfix">
+ 	    <h5>Google Maps Longitude</h5>
+		<label for="property-longitude" class="sr-only">Longitude</label>
+		<input id="property-longitude" name="longitude" class="form-control" placeholder="Longitude" type="text" title="Longitude">
+ 	  </div>
+ 	 </div>
+ 	</div>
+   </div>
+   <div class="submit_1 clearfix">
+    <h4 class="mgt col_1">Extra Information</h4>
+	<hr>
+    <div class="submit_1i clearfix">
+ 	 <div class="col-sm-4 space_left">
+ 	  <div class="submit_1i1 clearfix">
+ 	    <h5 class="mgt">Building Age <span class="col_2">(Optional)</span></h5>
+		<label for="property-age" class="sr-only">Building Age</label>
+		<select id="property-age" name="age" class="form-control" title="Building Age">
+ 			 <option value="">Select Age</option>
+ 			 <option value="0-5">0-5 Years</option>
+ 			 <option value="5-15">5-15 Years</option>
+ 			 <option value="15-30">15-30 Years</option>
+ 			 <option value="30-50">30-50 Years</option>
+ 			 <option value="50-70">50-70 Years</option>
+      </select>
+ 	  </div>
+ 	 </div>
+ 	 <div class="col-sm-4 space_all">
+ 	  <div class="submit_1i1 clearfix">
+ 	    <h5 class="mgt">Bedrooms <span class="col_2">(Optional)</span></h5>
+		<label for="property-bedrooms" class="sr-only">Bedrooms</label>
+		<select id="property-bedrooms" name="bedrooms" class="form-control" title="Bedrooms">
+ 			 <option value="">Select Bedrooms</option>
+ 			 <option>1</option>
+ 			 <option>2</option>
+ 			 <option>3</option>
+ 			 <option>4</option>
+ 			 <option>5</option>
+      </select>
+ 	  </div>
+ 	 </div>
+ 	 <div class="col-sm-4 space_right">
+ 	  <div class="submit_1i1 clearfix">
+ 	    <h5 class="mgt">Bathrooms <span class="col_2">(Optional)</span></h5>
+		<label for="property-bathrooms" class="sr-only">Bathrooms</label>
+		<select id="property-bathrooms" name="bathrooms" class="form-control" title="Bathrooms">
+ 		  	 <option value="">Select Bathrooms</option>
+ 		 	 <option>1</option>
+ 			 <option>2</option>
+ 			 <option>3</option>
+      </select>
+ 	  </div>
+ 	 </div>
+ 	</div>
+   </div>
+   <div class="submit_2 clearfix">
+    <h4 class="mgt col_1">Property Features</h4>
+	<hr>
+	<div class="submit_2i clearfix">
+	<label class="checkbox-inline"><input type="checkbox" title="Air Conditioning"> Air Conditioning</label>
+	<label class="checkbox-inline"><input type="checkbox" title="Swimming Pool"> Swimming Pool</label>
+	<label class="checkbox-inline"><input type="checkbox" title="Central Heating"> Central Heating</label>
+	<label class="checkbox-inline"><input type="checkbox" title="Laundry Room"> Laundry Room</label>
+	<label class="checkbox-inline"><input type="checkbox" title="Gym"> Gym</label>
+	<label class="checkbox-inline"><input type="checkbox" title="Alarm"> Alarm</label>
+	<label class="checkbox-inline"><input type="checkbox" title="Window Covering"> Window Covering</label>
+	<label class="checkbox-inline"><input type="checkbox" title="Refrigerator"> Refrigerator</label>
+	<label class="checkbox-inline"><input type="checkbox" title="TV Cable &amp; WIFI"> TV Cable &amp; WIFI</label>
+	<label class="checkbox-inline"><input type="checkbox" title="Microwave"> Microwave</label>
+	</div>
+   </div>
+   <div class="submit_1 clearfix">
+    <h4 class="mgt col_1">Contact Information</h4>
+	<hr>
+	<div class="submit_1i clearfix">
+	 <div class="col-sm-6 space_left">
+	  <div class="submit_1i1 clearfix">
+	    <h5 class="mgt">Name</h5>
+	    <input class="form-control" placeholder="Enter Your Name" type="text">
+	  </div>
+	 </div>
+	 <div class="col-sm-6 space_right">
+	  <div class="submit_1i1 clearfix">
+	    <h5 class="mgt">Username</h5>
+	    <input class="form-control" placeholder="Enter Your Username" type="text">
+	  </div>
+	 </div>
+	</div>
+	<div class="submit_1i clearfix">
+	 <div class="col-sm-6 space_left">
+	  <div class="submit_1i1 clearfix">
+	    <h5>Email</h5>
+	    <input class="form-control" placeholder="Enter Your Email" type="text">
+	  </div>
+	 </div>
+	 <div class="col-sm-6 space_right">
+	  <div class="submit_1i1 clearfix">
+	    <h5>Phone</h5>
+	    <input class="form-control" placeholder="Enter Your Phone" type="text">
+	  </div>
+	 </div>
+	</div>
+   </div>
+	<div class="submit_3 clearfix">
+	 <h5 class="mgt text-center"><button type="submit" class="button mgt">Submit Property</button></h5>
+	</div>
+	</form>
+  </div>
+ </div>
+</section>
+
+<section id="enquiry">
+<div class="enquiry_m bg_back">
+   <div class="container">
+  <div class="row">
+    <div class="enquiry_1 text-center clearfix">
+	 <div class="col-sm-12">
+	  <h4 class="mgt">NEWSLETTER</h4>
+	  <p class="col">Subscribe to our newsletter and get <span class="col_1">20%</span> off your first purchase</p>
+	  <div class="input-group">
+		<input type="text" class="form-control form_2" placeholder="Your Email">
+		<span class="input-group-btn">
+			<button class="btn btn-primary" type="button">
+				SUBSCRIBE</button>
+		</span>
+      </div>
+	 </div>
+	</div>
+  </div>
+ </div>
+ </div>
+</section>
+
+<section id="footer">
+   <div class="footer_m bg_backo">
+   <div class="container">
+  <div class="row">
+   <div class="footer_1 clearfix">
+    <div class="col-sm-3">
+	 <div class="footer_1i clearfix">
+	  <h3 class="mgt"><a class="col" href="index.html"> <i class="fa fa-area-chart col_oran"></i>  Westcare <span class="col_1"> Properties Ltd </span> </a></h3>
+	  <p class="col_2">Westcare Properties Ltd is Nairobi's premier real estate company, specializing in property sales, rentals, land acquisition, and property management services. We are committed to helping Kenyans find their dream homes and make smart investment decisions.</p>
+	  <h6 class="col_2"><i class="fa fa-map-marker col_1"></i> Nairobi, Kenya</h6>
+	  <h6 class="col_2"><i class="fa fa-phone col_1"></i> +254 723 466916</h6>
+	  <h6 class="col_2"><i class="fa fa-fax col_1"></i> +254 723 466916</h6>
+	  <h6 class="col_2"><i class="fa fa-envelope col_1"></i> <a class="col_2" href="mailto:info@westcareproperties.com">info@westcareproperties.com</a></h6>
+	 </div>
+   	</div>
+	<div class="col-sm-3">
+	 <div class="footer_1i clearfix">
+	  <h4 class="mgt col">LINKS</h4>
+	  <h6 class="col_2"> <a class="col_2" href="#"><i class="fa fa-chevron-right me_5 font_10 col_1"></i> Home</a></h6>
+	  <h6 class="col_2"> <a class="col_2" href="#"><i class="fa fa-chevron-right me_5 font_10 col_1"></i> About Us</a></h6>
+	  <h6 class="col_2"> <a class="col_2" href="#"><i class="fa fa-chevron-right me_5 font_10 col_1"></i> Contact Us</a></h6>
+	  <h6 class="col_2"> <a class="col_2" href="#"><i class="fa fa-chevron-right me_5 font_10 col_1"></i> Blog</a></h6>
+	  <h6 class="col_2"> <a class="col_2" href="#"><i class="fa fa-chevron-right me_5 font_10 col_1"></i> Services</a></h6>
+	  <h6 class="col_2"> <a class="col_2" href="#"><i class="fa fa-chevron-right me_5 font_10 col_1"></i> Properties Listing</a></h6>
+	  <h6 class="col_2"> <a class="col_2" href="#"><i class="fa fa-chevron-right me_5 font_10 col_1"></i> Properties Grid</a></h6>
+	  <h6 class="col_2"> <a class="col_2" href="#"><i class="fa fa-chevron-right me_5 font_10 col_1"></i> Properties Details</a></h6>
+	 </div>
+   	</div>
+	<div class="col-sm-3">
+	 <div class="footer_1i1 clearfix">
+	  <h4 class="mgt col">FEATURED LISTINGS</h4>
+	  <div class="footer_1i1i clearfix">
+	   <img src="img/real1.jpg" alt="Westlands 3BR Apartment">
+	   <h5 class="mgt"><a class="col_2" href="detail.html">Westlands 3BR Apartment</a></h5>
+	   <h6 class="col_2">Nairobi, Kenya</h6>
+	   <h6 class="col_2">KES 18,000,000</h6>
+	  </div>
+	  <div class="footer_1i1i clearfix">
+	   <img src="img/real2.jpg" alt="Syokimau 4BR Maisonette">
+	   <h5 class="mgt"><a class="col_2" href="detail.html">Syokimau 4BR Maisonette</a></h5>
+	   <h6 class="col_2">Syokimau, Machakos</h6>
+	   <h6 class="col_2">KES 12,500,000</h6>
+	  </div>
+	  <div class="footer_1i1i clearfix">
+	   <img src="img/real3.jpg" alt="Ruaka 2BR Apartment">
+	   <h5 class="mgt"><a class="col_2" href="detail.html">Ruaka 2BR Apartment</a></h5>
+	   <h6 class="col_2">Ruaka, Kiambu</h6>
+	   <h6 class="col_2">KES 7,800,000</h6>
+	  </div>
+	 </div>
+	</div>
+	<div class="col-sm-3">
+	 <div class="footer_1i clearfix">
+	  <h4 class="mgt col">SUBSCRIBE</h4>
+	    <div class="footer_1ii clearfix">
+        <p class="col_2 mgt">Sign Up for Our Newsletter to get Latest Updates and Offers. Subscribe to receive news in your inbox.</p>
+		<input class="form-control" placeholder="Enter Your Email" type="text">
+		<h5 class="text-center"><a class="button block" href="#">SUBSCRIBE</a></h5>
+	  </div>
+	 </div>
+   	</div>
+   </div>
+  </div>
+ </div>
+ </div>
+</section>
+
+<section id="footer_bottom">
+ <div class="container">
+  <div class="row">
+   <div class="footer_b_1 clearfix">
+	<div class="col-sm-8">
+	<div class="footer_2l clearfix">
+	 <p>© 2026 Westcare Properties Ltd. All Rights Reserved | Nairobi, Kenya</p>
+	</div>
+    </div>
+	 <div class="col-sm-4">
+	 <div class="footer_2r text-right clearfix">
+	   <ul class="social-network social-circle mgt">
+                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+	 </div>
+	</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<script>
+$(document).ready(function(){
+<a class="whatsapp-button" href="https://wa.me/254723466916" target="_blank" aria-label="Chat on WhatsApp"><i class="fa fa-whatsapp"></i></a>
+
+/*****Fixed Menu******/
+var secondaryNav = $('.cd-secondary-nav'),
+   secondaryNavTopPosition = secondaryNav.offset().top;
+	$(window).on('scroll', function(){
+		if($(window).scrollTop() > secondaryNavTopPosition ) {
+			secondaryNav.addClass('is-fixed');	
+		} else {
+			secondaryNav.removeClass('is-fixed');
+		}
+	});	
+	
+});
+</script>
+</body>
+ 
+</html>

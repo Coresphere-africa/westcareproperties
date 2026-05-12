@@ -1,0 +1,137 @@
+/*
+Template Name: The Prop
+File: Layout CSS
+Author: TemplatesOnWeb
+Author URI: https://www.templateonweb.com/
+Licence: <a href="https://www.templateonweb.com/license">Website Template Licence</a>
+*/
+/*********************agent_detail****************/
+.center_list {
+    background-image: url(../img/39.jpg);
+    background-position: center;
+}
+#agent_detail{
+padding-top:50px;
+padding-bottom:50px; 
+ }
+.agent_detail_1li1r h5 i{
+margin-right:10px;
+ }
+.agent_detail_1li1r h5{
+font-size:16px; 
+ }
+.agent_detail_1li1r ul li a {
+background:#95c41f; 
+}
+.agent_detail_1li1r{
+background:#95c41f1f;
+padding:25px 20px 20px 20px;
+min-height:360px;
+ }
+.agent_detail_1li1l img{
+min-height:360px;
+ }
+.detail_1l3 {
+    padding: 20px 20px 20px 20px;
+    background: #95c41f1f;
+    margin-top: 30px;
+}
+.agent_detail_1li2{
+margin-top:30px; 
+ }
+.home_inner{
+margin-top:30px; 
+ }
+.detail_1ri2{
+ padding:20px 15px;
+ background:#95c41f1f; 
+ }
+.detail_1ri2 .form-control{
+border-radius:0;
+height:50px;
+margin-top:15px;
+font-size:16px; 
+ }
+.detail_1ri2 .form_1{
+height:150px;
+ }
+.agent_detail_1r .footer_1i1{
+ margin-top:30px;
+ padding:20px 15px;
+ background:#95c41f1f;
+ }
+.detail_1ri1{
+ margin-top:30px;
+ padding:20px 15px;
+ background:#95c41f1f; 
+ }
+.detail_1ri1 ul li a {
+background:#95c41f; 
+}
+.center_list_1r1 ul li{
+display:inline-block;
+margin-bottom:8px;
+ }
+.center_list_1r1 ul li a{
+display:block;
+background:#fff;
+border:1px solid #bcff14;
+padding:5px 10px 8px 10px; 
+ }
+.center_list_1r1 ul li a:hover{
+background:#95c41f;
+color:#fff;
+border:1px solid #95c41f;
+ }
+.center_list_1r1{
+margin-top:30px;
+padding:20px 15px;
+background:#95c41f1f; 
+ }
+ 
+.agent_detail_1li1r  span{
+color:#333; 
+ }
+/*********************agent_detail_end****************/
+
+@media screen and (max-width : 767px){
+.agent_detail_1li1r h5{
+font-size:14px; 
+ }
+.agent_detail_1li1r ul li{
+margin-bottom:8px; 
+ }
+.feature_2m_last{
+padding-left:10px;
+padding-right:10px; 
+ }
+.agent_detail_1r{
+margin-top:15px; 
+ }
+.agent_detail_1r .footer_1i1{
+text-align:center; 
+ }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+.agent_detail_1li1r  .social-circle li a{
+width:35px;
+height:35px; 
+ }
+.agent_detail_1li1r  .social-circle li a i{
+line-height:35px;
+ }
+.agent_detail_1li1r h5{
+font-size:14px; 
+ }
+ }
+@media (min-width:992px) and (max-width:1200px) {
+
+ }
+@media (min-width:1201px) and (max-width:1350px) {
+
+ }
+
+
+
+

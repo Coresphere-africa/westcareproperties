@@ -1,0 +1,109 @@
+/*
+Template Name: The Prop
+File: Layout CSS
+Author: TemplatesOnWeb
+Author URI: https://www.templateonweb.com/
+Licence: <a href="https://www.templateonweb.com/license">Website Template Licence</a>
+*/
+/*********************about_pg****************/
+.center_list {
+background-image: url(../img/1.jpg);
+background-position: center;
+}
+.center_blog {
+padding-top:100px;
+padding-bottom:100px;
+background:#95c41f1f; 
+}
+#about_pg{
+padding-top:50px;
+padding-bottom:50px; 
+ }
+.team_hi1 ul li a {
+background:#95c41f; 
+}
+.team_hi1 {
+background:#95c41f1f;
+padding:25px 15px 30px 15px;
+}
+.feature_2_last .btn-success{
+background:#333;
+border-radius:0; 
+padding:0;
+border:none;
+width:35px;
+height:35px;
+line-height:35px;
+border:1px solid #333;
+margin-left:2px;
+margin-right:2px;
+text-align:center;
+font-size:18px;
+ }
+.feature_2_last .btn-success:hover{
+ background:#95c41f;
+ border-color:#95c41f;
+ color:#fff;
+ }
+.feature_2_last {
+margin-top: 30px;
+margin-bottom: 30px;
+}
+#work_h{
+padding-top:50px;
+padding-bottom:50px;
+ }
+.work_h_1i span i{
+ background:#95c41f;
+ width:70px;
+ height:70px;
+ text-align:center;
+ line-height:70px;
+ font-size:24px;
+ border-radius:50%;
+ display:inline-block;
+ }
+.work_h_1i{
+background:#95c41f1f;
+padding:40px 15px;
+cursor:pointer; 
+transform: rotate(-10deg);
+border-radius:20px 0px 20px 0px;
+ }
+.work_h_1i:hover{
+box-shadow: 0 0 5px rgba(0,0,0,0.6);
+ }
+.work_h_1{
+margin-top:50px; 
+ }
+.work_h_2{
+margin-top:50px; 
+ }
+/*********************about_pg_end****************/
+
+@media screen and (max-width : 767px){
+.about_pg_1r {
+ margin-top:15px;
+ text-align:center;
+ }
+.feature_2_last {
+text-align:center; 
+ }
+.work_h_1i {
+margin-top:10px; 
+ }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+
+ }
+@media (min-width:992px) and (max-width:1200px) {
+
+ }
+@media (min-width:1201px) and (max-width:1350px) {
+
+ }
+
+
+
+

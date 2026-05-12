@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Westcare Properties Ltd - Blog Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --secondary-green: #4caf50;
+            --dark-green: #1b5e20;
+            --light-gray: #f8f9fa;
+            --medium-gray: #6c757d;
+            --dark-gray: #343a40;
+            --white: #ffffff;
+            --black: #000000;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--light-gray);
+        }
+
+        .blog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .blog-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--dark-gray);
+            margin: 0;
+        }
+
+        .btn-add-post {
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-add-post:hover {
+            background: var(--dark-green);
+        }
+
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .post-content {
+            padding: 20px;
+        }
+
+        .post-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--dark-gray);
+            margin-bottom: 10px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .post-excerpt {
+            font-size: 14px;
+            color: var(--medium-gray);
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 12px;
+            color: var(--medium-gray);
+        }
+
+        .post-category {
+            background: var(--secondary-green);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .post-date {
+            font-size: 12px;
+        }
+
+        .post-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-action {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-edit {
+            background: var(--secondary-green);
+            color: white;
+        }
+
+        .btn-edit:hover {
+            background: var(--primary-green);
+        }
+
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+        }
+
+        .btn-delete:hover {
+            background: #c82333;
+        }
+
+        .modal-content {
+            border-radius: 10px;
+        }
+
+        .modal-header {
+            background: var(--primary-green);
+            color: white;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 10px 15px;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 0.2rem rgba(46, 125, 50, 0.25);
+        }
+
+        .form-control[rows] {
+            resize: vertical;
+        }
+
+        .image-upload-area {
+            border: 2px dashed var(--medium-gray);
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            background: var(--light-gray);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        .image-upload-area:hover {
+            border-color: var(--primary-green);
+            background: #f0f8f0;
+        }
+
+        .current-image {
+            margin-top: 10px;
+        }
+
+        .post-preview {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .filter-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-select {
+            padding: 8px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            background: white;
+        }
+
+        .search-input {
+            padding: 8px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            background: white;
+            min-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="alert alert-success" id="saveAlert" style="display: none;">
+            <i class="fas fa-check-circle"></i> Blog post saved successfully!
+        </div>
+
+        <!-- Header -->
+        <div class="blog-header">
+            <h1 class="blog-title"><i class="fas fa-blog text-success me-2"></i>Blog Management</h1>
+            <button class="btn-add-post" onclick="openAddPostModal()">
+                <i class="fas fa-plus me-2"></i>Add New Post
+            </button>
+        </div>
+
+        <!-- Filters -->
+        <div class="filter-section">
+            <div class="filter-controls">
+                <div>
+                    <label class="form-label me-2">Search:</label>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search posts..." onkeyup="filterPosts()">
+                </div>
+                <div>
+                    <label class="form-label me-2">Filter by Category:</label>
+                    <select class="filter-select" id="categoryFilter" onchange="filterPosts()">
+                        <option value="all">All Categories</option>
+                        <option value="Market Trends">Market Trends</option>
+                        <option value="Investment">Investment</option>
+                        <option value="Home Buying">Home Buying</option>
+                        <option value="Property Tips">Property Tips</option>
+                        <option value="Real Estate News">Real Estate News</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label me-2">Sort by:</label>
+                    <select class="filter-select" id="sortFilter" onchange="filterPosts()">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="title">Title A-Z</option>
+                        <option value="title-desc">Title Z-A</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Posts Grid -->
+        <div class="blog-posts" id="blogPostsGrid">
+            <!-- Blog posts will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Add/Edit Blog Post Modal -->
+    <div class="modal fade" id="postModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="postModalTitle">Add New Blog Post</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="postForm">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label class="form-label">Post Title</label>
+                                    <input type="text" class="form-control" id="postTitle" required>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Category</label>
+                                            <select class="form-control" id="postCategory" required>
+                                                <option value="">Select Category</option>
+                                                <option value="Market Trends">Market Trends</option>
+                                                <option value="Investment">Investment</option>
+                                                <option value="Home Buying">Home Buying</option>
+                                                <option value="Property Tips">Property Tips</option>
+                                                <option value="Real Estate News">Real Estate News</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Author</label>
+                                            <input type="text" class="form-control" id="postAuthor" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Excerpt (Short Description)</label>
+                                    <textarea class="form-control" id="postExcerpt" rows="3" placeholder="Brief summary of the post..." required></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Content</label>
+                                    <textarea class="form-control" id="postContent" rows="10" placeholder="Write your blog post content here..." required></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Tags (comma separated)</label>
+                                    <input type="text" class="form-control" id="postTags" placeholder="e.g. real estate, nairobi, investment">
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="postPublished" checked>
+                                        <label class="form-check-label">
+                                            Publish Post
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label class="form-label">Featured Image</label>
+                                    <div class="image-upload-area" onclick="document.getElementById('postImageInput').click()">
+                                        <i class="fas fa-image fa-2x text-muted mb-2"></i>
+                                        <p>Click to upload image</p>
+                                        <small class="text-muted">Max 2MB</small>
+                                    </div>
+                                    <input type="file" id="postImageInput" class="file-input" accept="image/*">
+                                    <div class="current-image" id="currentImage"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">SEO Settings</label>
+                                    <div class="mb-2">
+                                        <input type="text" class="form-control form-control-sm" id="postMetaTitle" placeholder="Meta Title">
+                                    </div>
+                                    <div>
+                                        <textarea class="form-control form-control-sm" id="postMetaDescription" rows="3" placeholder="Meta Description"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" id="savePostBtn">
+                        <i class="fas fa-save me-2"></i>Save Post
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Security check
+        if (localStorage.getItem('adminLoggedIn') !== 'true') {
+            window.location.href = 'admin-login.html';
+        }
+
+        // DOM elements
+        const blogPostsGrid = document.getElementById('blogPostsGrid');
+        const postModal = new bootstrap.Modal(document.getElementById('postModal'));
+        const postForm = document.getElementById('postForm');
+        const savePostBtn = document.getElementById('savePostBtn');
+        const currentImage = document.getElementById('currentImage');
+
+        let blogPosts = JSON.parse(localStorage.getItem('blogPosts')) || [];
+        let currentPostId = null;
+        let uploadedImage = null;
+
+        // Initialize default blog posts if none exist
+        if (blogPosts.length === 0) {
+            blogPosts = [
+                {
+                    id: 1,
+                    title: 'Nairobi Real Estate Market Trends 2024',
+                    category: 'Market Trends',
+                    author: 'John Kariuki',
+                    excerpt: 'An in-depth analysis of the current Nairobi real estate market, including price trends, popular neighborhoods, and future projections.',
+                    content: 'The Nairobi real estate market continues to show strong growth and resilience. With increasing demand for both residential and commercial properties, investors are seeing attractive returns on their investments. Key trends include the rise of affordable housing developments, increased interest in sustainable building practices, and the growing popularity of mixed-use developments.',
+                    tags: ['nairobi', 'market trends', 'real estate', 'investment'],
+                    image: 'img/blog1.jpg',
+                    published: true,
+                    metaTitle: 'Nairobi Real Estate Market Trends 2024 - Westcare Properties',
+                    metaDescription: 'Stay updated with the latest Nairobi real estate market trends, price movements, and investment opportunities.',
+                    dateCreated: '2024-01-15',
+                    datePublished: '2024-01-15'
+                },
+                {
+                    id: 2,
+                    title: 'Investing in Commercial Real Estate: A Complete Guide',
+                    category: 'Investment',
+                    author: 'Sarah Wanjiku',
+                    excerpt: 'Everything you need to know about investing in commercial real estate in Kenya, from office spaces to retail properties.',
+                    content: 'Commercial real estate investment offers stable returns and long-term growth potential. In Kenya, the commercial sector has shown consistent growth, particularly in Nairobi\'s central business district and emerging commercial hubs. Key considerations include location analysis, tenant quality, lease terms, and market conditions.',
+                    tags: ['commercial', 'investment', 'real estate', 'kenya'],
+                    image: 'img/blog2.jpg',
+                    published: true,
+                    metaTitle: 'Commercial Real Estate Investment Guide Kenya - Westcare Properties',
+                    metaDescription: 'Learn how to invest in commercial real estate in Kenya. Comprehensive guide covering office spaces, retail properties, and investment strategies.',
+                    dateCreated: '2024-01-12',
+                    datePublished: '2024-01-12'
+                },
+                {
+                    id: 3,
+                    title: 'Top 10 Neighborhoods for First-Time Home Buyers in Nairobi',
+                    category: 'Home Buying',
+                    author: 'David Mutua',
+                    excerpt: 'Discover the best neighborhoods in Nairobi for first-time home buyers, considering affordability, amenities, and growth potential.',
+                    content: 'Choosing the right neighborhood is crucial for first-time home buyers. Factors to consider include proximity to work, school quality, security, amenities, and future development plans. Popular areas for first-time buyers include Kilimani, Kileleshwa, and Karen, each offering different advantages and price points.',
+                    tags: ['first-time buyers', 'nairobi', 'neighborhoods', 'home buying'],
+                    image: 'img/blog3.jpg',
+                    published: true,
+                    metaTitle: 'Best Nairobi Neighborhoods for First-Time Home Buyers - Westcare Properties',
+                    metaDescription: 'Find the perfect neighborhood for your first home in Nairobi. Compare amenities, prices, and growth potential in top areas.',
+                    dateCreated: '2024-01-10',
+                    datePublished: '2024-01-10'
+                },
+                {
+                    id: 4,
+                    title: 'Sustainable Building Practices in Modern Real Estate',
+                    category: 'Property Tips',
+                    author: 'Grace Njeri',
+                    excerpt: 'How green building practices are shaping the future of real estate development in Kenya and beyond.',
+                    content: 'Sustainable building practices are becoming increasingly important in the real estate industry. From energy-efficient designs to water conservation systems, developers are incorporating eco-friendly features that reduce environmental impact and operating costs. In Kenya, green building certifications are gaining traction, with more projects adopting sustainable materials and construction methods.',
+                    tags: ['sustainable', 'green building', 'real estate', 'environment'],
+                    image: 'img/blog4.jpg',
+                    published: true,
+                    metaTitle: 'Sustainable Building Practices in Kenyan Real Estate - Westcare Properties',
+                    metaDescription: 'Explore how green building practices are transforming real estate development in Kenya and improving property value.',
+                    dateCreated: '2024-01-08',
+                    datePublished: '2024-01-08'
+                }
+            ];
+            localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
+        }
+
+        // Load blog posts
+        function loadPosts(searchTerm = '', filterCategory = 'all', sortBy = 'newest') {
+            let filteredPosts = [...blogPosts];
+
+            // Apply search filter
+            if (searchTerm) {
+                filteredPosts = filteredPosts.filter(post =>
+                    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    post.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())
+                );
+            }
+
+            // Apply category filter
+            if (filterCategory !== 'all') {
+                filteredPosts = filteredPosts.filter(post => post.category === filterCategory);
+            }
+
+            // Apply sorting
+            switch (sortBy) {
+                case 'oldest':
+                    filteredPosts.sort((a, b) => new Date(a.dateCreated) - new Date(b.dateCreated));
+                    break;
+                case 'title':
+                    filteredPosts.sort((a, b) => a.title.localeCompare(b.title));
+                    break;
+                case 'title-desc':
+                    filteredPosts.sort((a, b) => b.title.localeCompare(a.title));
+                    break;
+                case 'newest':
+                default:
+                    filteredPosts.sort((a, b) => new Date(b.dateCreated) - new Date(a.dateCreated));
+                    break;
+            }
+
+            blogPostsGrid.innerHTML = '';
+
+            filteredPosts.forEach(post => {
+                const postCard = document.createElement('div');
+                postCard.className = 'post-card';
+
+                const imageSrc = post.image || 'img/placeholder-blog.jpg';
+
+                postCard.innerHTML = `
+                    <img src="${imageSrc}" alt="${post.title}" class="post-image">
+                    <div class="post-content">
+                        <div class="post-title">${post.title}</div>
+                        <div class="post-excerpt">${post.excerpt}</div>
+                        <div class="post-meta">
+                            <span class="post-category">${post.category}</span>
+                            <span class="post-date">${new Date(post.dateCreated).toLocaleDateString()}</span>
+                        </div>
+                        <div class="post-actions">
+                            <button class="btn-action btn-edit" onclick="editPost(${post.id})">
+                                <i class="fas fa-edit"></i> Edit
+                            </button>
+                            <button class="btn-action btn-delete" onclick="deletePost(${post.id})">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                blogPostsGrid.appendChild(postCard);
+            });
+        }
+
+        // Filter posts
+        function filterPosts() {
+            const searchTerm = document.getElementById('searchInput').value;
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            const sortFilter = document.getElementById('sortFilter').value;
+            loadPosts(searchTerm, categoryFilter, sortFilter);
+        }
+
+        // Open add post modal
+        function openAddPostModal() {
+            currentPostId = null;
+            document.getElementById('postModalTitle').textContent = 'Add New Blog Post';
+            postForm.reset();
+            currentImage.innerHTML = '';
+            uploadedImage = null;
+            document.getElementById('postAuthor').value = 'Westcare Properties'; // Default author
+            postModal.show();
+        }
+
+        // Edit post
+        function editPost(id) {
+            const post = blogPosts.find(p => p.id === id);
+            if (post) {
+                currentPostId = id;
+                document.getElementById('postModalTitle').textContent = 'Edit Blog Post';
+
+                // Fill form
+                document.getElementById('postTitle').value = post.title;
+                document.getElementById('postCategory').value = post.category;
+                document.getElementById('postAuthor').value = post.author;
+                document.getElementById('postExcerpt').value = post.excerpt;
+                document.getElementById('postContent').value = post.content;
+                document.getElementById('postTags').value = post.tags ? post.tags.join(', ') : '';
+                document.getElementById('postPublished').checked = post.published;
+                document.getElementById('postMetaTitle').value = post.metaTitle || '';
+                document.getElementById('postMetaDescription').value = post.metaDescription || '';
+
+                // Load image
+                uploadedImage = post.image;
+                displayCurrentImage();
+
+                postModal.show();
+            }
+        }
+
+        // Delete post
+        function deletePost(id) {
+            if (confirm('Are you sure you want to delete this blog post?')) {
+                blogPosts = blogPosts.filter(p => p.id !== id);
+                localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
+                loadPosts();
+            }
+        }
+
+        // Display current image in modal
+        function displayCurrentImage() {
+            currentImage.innerHTML = '';
+            if (uploadedImage) {
+                const img = document.createElement('img');
+                img.src = uploadedImage;
+                img.className = 'post-preview';
+                currentImage.appendChild(img);
+            }
+        }
+
+        // Image upload handling
+        document.getElementById('postImageInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    uploadedImage = e.target.result;
+                    displayCurrentImage();
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Save post
+        savePostBtn.addEventListener('click', function() {
+            if (!postForm.checkValidity()) {
+                postForm.reportValidity();
+                return;
+            }
+
+            const postData = {
+                title: document.getElementById('postTitle').value,
+                category: document.getElementById('postCategory').value,
+                author: document.getElementById('postAuthor').value,
+                excerpt: document.getElementById('postExcerpt').value,
+                content: document.getElementById('postContent').value,
+                tags: document.getElementById('postTags').value.split(',').map(tag => tag.trim()).filter(tag => tag),
+                image: uploadedImage,
+                published: document.getElementById('postPublished').checked,
+                metaTitle: document.getElementById('postMetaTitle').value,
+                metaDescription: document.getElementById('postMetaDescription').value,
+                dateCreated: new Date().toISOString().split('T')[0]
+            };
+
+            if (postData.published) {
+                postData.datePublished = new Date().toISOString().split('T')[0];
+            }
+
+            if (currentPostId) {
+                // Update existing post
+                const index = blogPosts.findIndex(p => p.id === currentPostId);
+                if (index !== -1) {
+                    blogPosts[index] = { ...blogPosts[index], ...postData };
+                }
+            } else {
+                // Add new post
+                postData.id = Date.now();
+                blogPosts.push(postData);
+            }
+
+            localStorage.setItem('blogPosts', JSON.stringify(blogPosts));
+            postModal.hide();
+            loadPosts();
+            showSaveAlert();
+        });
+
+        // Show save alert
+        function showSaveAlert() {
+            const alert = document.getElementById('saveAlert');
+            alert.style.display = 'block';
+            setTimeout(() => {
+                alert.style.display = 'none';
+            }, 3000);
+        }
+
+        // Initialize
+        loadPosts();
+    </script>
+</body>
+</html>

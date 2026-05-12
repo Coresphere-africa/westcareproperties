@@ -1,0 +1,59 @@
+/*
+Template Name: The Prop
+File: Layout CSS
+Author: TemplatesOnWeb
+Author URI: https://www.templateonweb.com/
+Licence: <a href="https://www.templateonweb.com/license">Website Template Licence</a>
+*/
+/*********************agent****************/
+.center_list {
+    background-image: url(../img/3.jpg);
+    background-position: center;
+}
+#team_h{
+padding-top:50px;
+padding-bottom:50px; 
+ }
+.team_hi1 ul li a {
+background:#95c41f; 
+}
+.team_hi1 {
+background:#95c41f1f;
+padding:25px 15px 30px 15px;
+}
+.team_h_1{
+margin-top:30px; 
+ }
+.listing_t{
+background:#95c41f1f;
+padding:20px;
+ }
+.listing_tr .form-control{
+height:40px;
+border-radius:0;
+width:250px;
+border-color:#bcff14;
+font-size:16px; 
+ }
+.listing_tl h4{
+margin-top:8px; 
+ }
+/*********************agent_end****************/
+
+@media screen and (max-width : 767px){
+
+}
+
+@media (min-width:768px) and (max-width:991px) {
+
+ }
+@media (min-width:992px) and (max-width:1200px) {
+
+ }
+@media (min-width:1201px) and (max-width:1350px) {
+
+ }
+
+
+
+

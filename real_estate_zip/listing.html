@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Westcare Properties Ltd - Listings</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/global.css" rel="stylesheet">
+	<link href="css/list.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz@9..144&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/shared-data.js"></script>
+	<script src="js/auth-global.js"></script>
+	<script src="js/whatsapp-button.js"></script>
+  </head>
+  
+<body>
+<section id="top">
+ <div class="container">
+  <div class="row">
+   <div class="top_1 clearfix">
+    <div class="col-sm-6">
+		 <div class="top_1l clearfix">
+		  <ul class="mgt">
+		   <li><a class="col font_14" href="tel:0723466916"><i class="fa fa-phone col_1"></i> 0723 466916</a></li>
+		   <li><a class="col font_14" href="mailto:info@westcare-properties.com"><i class="fa fa-envelope col_1"></i> info@westcare-properties.com</a></li>
+		  </ul>
+		 </div>
+	</div>
+	<div class="col-sm-6">
+	 <div class="top_1l text-right clearfix">
+	  <ul class="mgt">
+	   <li><a class="col font_13" href="#login" data-toggle="modal" data-target="#globalLoginModal"><i class="fa fa-sign-in col_1"></i> LOGIN</a></li>
+	   <li><a class="col font_13" href="#"><i class="fa fa-user col_1"></i>  REGISTER</a></li>
+	  </ul>
+	 </div>
+	</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="header" class="clearfix cd-secondary-nav">
+	<nav class="navbar">
+		<div class="container">
+		    <div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html"> <i class="fa fa-home"></i>  Westcare <span>Properties Ltd</span> </a>
+			</div>
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+				<li><a class="m_tag" href="index.html">Home</a></li>
+				<li class="dropdown">
+					  <a class="m_tag active_tab" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Property<span class="caret"></span></a>
+					  <ul class="dropdown-menu drop_3" role="menu">
+						<li><a href="listing.html">Property Listing</a></li>
+						<li><a class="border_none" href="detail.html">Property Detail</a></li>
+					  </ul>
+                    </li>
+				
+				    <li class="dropdown">
+					  <a class="m_tag" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Agent<span class="caret"></span></a>
+					  <ul class="dropdown-menu drop_3" role="menu">
+						<li><a class="border_none" href="agent_detail.html">Agent Detail</a></li>
+					  </ul>
+                    </li>
+					
+				  <li class="dropdown">
+					  <a class="m_tag" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Blog<span class="caret"></span></a>
+					  <ul class="dropdown-menu drop_3" role="menu">
+						<li><a href="blog.html">Blog</a></li>
+						<li><a class="border_none" href="blog_detail.html">Blog Detail</a></li>
+					  </ul>
+                    </li>
+				  <li><a class="m_tag" href="about.html">About Us</a></li>
+				  <li><a class="m_tag" href="services.html">Services</a></li>
+				<li><a class="m_tag" href="contact.html">Contact</a></li>
+				<li><a class="m_tag button_1 mgt" href="property.html">Submit Property</a></li>
+			</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	
+	</section>
+	
+<section id="center" class="center_list clearfix">
+<div class="center_list_m clearfix">
+ <div class="container">
+  <div class="row">
+   <div class="center_list_1 text-center clearfix">
+    <div class="col-sm-12">
+	 <h3 class="mgt col">PROPERTIES LISTING</h3>
+	 <h5 class="col"><a class="col" href="#">Home</a> <span>/</span> Properties Listing</h5>
+	</div>
+   </div>
+  </div>
+ </div>
+</div>
+</section>
+	
+<section id="listing">
+ <div class="container">
+  <div class="row">
+   <div class="listing_t clearfix">
+    <div class="col-sm-6">
+	 <div class="listing_tl clearfix">
+	  <h4>Properties List</h4>
+	 </div>
+	</div>
+	<div class="col-sm-6">
+	 <div class="listing_tr pull-right clearfix">
+	  <select class="sorting form-control">
+								   <option>Newest First</option>
+								   <option>Oldest First</option>
+								   <option>Price (High to Low)</option>
+								   <option>Price (Low to High)</option>
+                                </select>
+	 </div>
+	</div>
+   </div>
+   <div class="listing_1 clearfix">
+     <div class="col-sm-4 space_all">
+	  <div class="listing_1l clearfix">
+	    <div class="home_inner_im clearfix">
+							    <div class="home_inner_im1 clearfix">
+								 <a href="detail.html"><img src="img/4.jpg" class="iw" alt="abc"></a>
+								</div>
+								<div class="home_inner_im2 clearfix">
+								 <h6 class="mgt"><a class="bg_1" href="detail.html">Featured</a></h6>
+								 <div class="home_inner_im2i text-center clearfix">
+								   <ul class="mgt">
+									<li><a href="detail.html"><i class="fa fa-link"></i></a></li>
+									<li><a href="detail.html"><i class="fa fa-video-camera"></i></a></li>
+									<li><a href="detail.html"><i class="fa fa-expand"></i></a></li>
+							     </ul>
+								 </div>
+								 <h4 class="col normal">$150,000 <a class="bg_4 pull-right" href="detail.html">For Sale</a></h4>
+								</div>
+							 </div>
+	  </div>
+	 </div>
+	 <div class="col-sm-8 space_all">
+	  <div class="listing_1r clearfix">
+	   <div class="feature_2m_last clearfix">
+					  <h4 class="mgt bold"><a href="detail.html">Westlands Modern Apartment</a></h4>
+					  <p><i class="fa fa-map-marker"></i> Westlands, Nairobi</p>
+					  <p>Beautiful 3-bedroom apartment in the heart of Westlands with modern finishes, secure parking, and proximity to restaurants and shopping centers. Perfect for young professionals and small families.</p>
+					  <h6><i class="fa fa-object-group col_1"></i> 1200 sq ft <i class="fa fa-hotel col_1"></i> 3 Beds <i class="fa fa-tv col_1"></i>  TV</h6>
+					  <h6><i class="fa fa-home col_1"></i> 2 Baths <i class="fa fa-wrench col_1"></i> 1 Garage <i class="fa fa-building col_1"></i>  1 Balcony</h6>
+					  <div class="feature_2m_last_i clearfix">
+					    <h6><a href="detail.html"><i class="fa fa-user"></i> Westcare Agent <span class="pull-right"><i class="fa fa-calendar"></i> 2 weeks ago</span></a></h6>
+					  </div>
+					 </div>
+	  </div>
+	 </div>
+   </div>
+   <div class="listing_1 clearfix">
+     <div class="col-sm-4 space_all">
+	  <div class="listing_1l clearfix">
+	    <div class="home_inner_im clearfix">
+							    <div class="home_inner_im1 clearfix">
+								 <a href="detail.html"><img src="img/5.jpg" class="iw" alt="abc"></a>
+								</div>
+								<div class="home_inner_im2 clearfix">
+								 <h6 class="mgt"><a class="bg_1" href="detail.html">Featured</a></h6>
+								 <div class="home_inner_im2i text-center clearfix">
+								   <ul class="mgt">
+									<li><a href="detail.html"><i class="fa fa-link"></i></a></li>
+									<li><a href="detail.html"><i class="fa fa-video-camera"></i></a></li>
+									<li><a href="detail.html"><i class="fa fa-expand"></i></a></li>
+							     </ul>
+								 </div>
+								 <h4 class="col normal">$150,000 <a class="bg_4 pull-right" href="detail.html">For Sale</a></h4>
+								</div>
+							 </div>
+	  </div>
+	 </div>
+	 <div class="col-sm-8 space_all">
+	  <div class="listing_1r clearfix">
+	   <div class="feature_2m_last clearfix">
+					  <h4 class="mgt bold"><a href="detail.html">Karen Family Home</a></h4>
+					  <p><i class="fa fa-map-marker"></i> Karen, Nairobi</p>
+					  <p>Spacious 4-bedroom family home in Karen with a large garden, modern kitchen, and excellent security. Ideal for families looking for a peaceful residential area with easy access to schools and shopping.</p>
+					  <h6><i class="fa fa-object-group col_1"></i> 2500 sq ft <i class="fa fa-hotel col_1"></i> 4 Beds <i class="fa fa-tv col_1"></i>  TV</h6>
+					  <h6><i class="fa fa-home col_1"></i> 3 Baths <i class="fa fa-wrench col_1"></i> 2 Garage <i class="fa fa-building col_1"></i>  2 Balcony</h6>
+					  <div class="feature_2m_last_i clearfix">
+					    <h6><a href="detail.html"><i class="fa fa-user"></i> Westcare Agent <span class="pull-right"><i class="fa fa-calendar"></i> 1 month ago</span></a></h6>
+					  </div>
+					 </div>
+	  </div>
+	 </div>
+   </div>
+   <div class="listing_1 clearfix">
+     <div class="col-sm-4 space_all">
+	  <div class="listing_1l clearfix">
+	    <div class="home_inner_im clearfix">
+							    <div class="home_inner_im1 clearfix">
+								 <a href="detail.html"><img src="img/6.jpg" class="iw" alt="abc"></a>
+								</div>
+								<div class="home_inner_im2 clearfix">
+								 <h6 class="mgt"><a class="bg_1" href="detail.html">Featured</a></h6>
+								 <div class="home_inner_im2i text-center clearfix">
+								   <ul class="mgt">
+									<li><a href="detail.html"><i class="fa fa-link"></i></a></li>
+									<li><a href="detail.html"><i class="fa fa-video-camera"></i></a></li>
+									<li><a href="detail.html"><i class="fa fa-expand"></i></a></li>
+							     </ul>
+								 </div>
+								 <h4 class="col normal">$150,000 <a class="bg_4 pull-right" href="detail.html">For Sale</a></h4>
+								</div>
+							 </div>
+	  </div>
+	 </div>
+	 <div class="col-sm-8 space_all">
+	  <div class="listing_1r clearfix">
+	   <div class="feature_2m_last clearfix">
+					  <h4 class="mgt bold"><a href="detail.html">Lorem House Luxury Villa</a></h4>
+					  <p><i class="fa fa-map-marker"></i> Fst Su, 67 - Central Park North, OZD</p>
+					  <p>Prime commercial space available in Westlands, Nairobi's business district. This modern office building offers excellent connectivity, 24/7 security, and proximity to major amenities. Perfect for businesses looking to establish a presence in Nairobi's most dynamic commercial area.</p>
+					  <h6><i class="fa fa-object-group col_1"></i> 4200 sq ft <i class="fa fa-hotel col_1"></i> 5 Beds <i class="fa fa-tv col_1"></i>  TV</h6>
+					  <h6><i class="fa fa-home col_1"></i> 3 Baths <i class="fa fa-wrench col_1"></i> 2 Garage <i class="fa fa-building col_1"></i>  3 Balcony</h6>
+					  <div class="feature_2m_last_i clearfix">
+					    <h6><a href="detail.html"><i class="fa fa-user"></i> Eget Nulla <span class="pull-right"><i class="fa fa-calendar"></i> 3 months ago</span></a></h6>
+					  </div>
+					 </div>
+	  </div>
+	 </div>
+   </div>
+   <div class="listing_1 clearfix">
+     <div class="col-sm-4 space_all">
+	  <div class="listing_1l clearfix">
+	    <div class="home_inner_im clearfix">
+							    <div class="home_inner_im1 clearfix">
+								 <a href="detail.html"><img src="img/7.jpg" class="iw" alt="abc"></a>
+								</div>
+								<div class="home_inner_im2 clearfix">
+								 <h6 class="mgt"><a class="bg_1" href="detail.html">Featured</a></h6>
+								 <div class="home_inner_im2i text-center clearfix">
+								   <ul class="mgt">
+									<li><a href="detail.html"><i class="fa fa-link"></i></a></li>
+									<li><a href="detail.html"><i class="fa fa-video-camera"></i></a></li>
+									<li><a href="detail.html"><i class="fa fa-expand"></i></a></li>
+							     </ul>
+								 </div>
+								 <h4 class="col normal">$280,000 <a class="bg_4 pull-right" href="detail.html">For Sale</a></h4>
+								</div>
+							 </div>
+	  </div>
+	 </div>
+	 <div class="col-sm-8 space_all">
+	  <div class="listing_1r clearfix">
+	   <div class="feature_2m_last clearfix">
+					  <h4 class="mgt bold"><a href="detail.html">Kilimani Executive Apartment</a></h4>
+					  <p><i class="fa fa-map-marker"></i> Kilimani, Nairobi</p>
+					  <p>Executive 4-bedroom apartment in the prestigious Kilimani area. Features modern amenities, 24/7 security, gym, and swimming pool. Perfect for professionals and families seeking upscale living.</p>
+					  <h6><i class="fa fa-object-group col_1"></i> 1800 sq ft <i class="fa fa-hotel col_1"></i> 4 Beds <i class="fa fa-tv col_1"></i>  TV</h6>
+					  <h6><i class="fa fa-home col_1"></i> 3 Baths <i class="fa fa-wrench col_1"></i> 2 Garage <i class="fa fa-building col_1"></i>  2 Balcony</h6>
+					  <div class="feature_2m_last_i clearfix">
+					    <h6><a href="detail.html"><i class="fa fa-user"></i> Westcare Agent <span class="pull-right"><i class="fa fa-calendar"></i> 1 week ago</span></a></h6>
+					  </div>
+					 </div>
+	  </div>
+	 </div>
+   </div>
+   <div class="listing_1 clearfix">
+     <div class="col-sm-4 space_all">
+	  <div class="listing_1l clearfix">
+	    <div class="home_inner_im clearfix">
+							    <div class="home_inner_im1 clearfix">
+								 <a href="detail.html"><img src="img/8.jpg" class="iw" alt="abc"></a>
+								</div>
+								<div class="home_inner_im2 clearfix">
+								 <h6 class="mgt"><a class="bg_1" href="detail.html">Featured</a></h6>
+								 <div class="home_inner_im2i text-center clearfix">
+								   <ul class="mgt">
+									<li><a href="detail.html"><i class="fa fa-link"></i></a></li>
+									<li><a href="detail.html"><i class="fa fa-video-camera"></i></a></li>
+									<li><a href="detail.html"><i class="fa fa-expand"></i></a></li>
+							     </ul>
+								 </div>
+								 <h4 class="col normal">$350,000 <a class="bg_4 pull-right" href="detail.html">For Sale</a></h4>
+								</div>
+							 </div>
+	  </div>
+	 </div>
+	 <div class="col-sm-8 space_all">
+	  <div class="listing_1r clearfix">
+	   <div class="feature_2m_last clearfix">
+					  <h4 class="mgt bold"><a href="detail.html">Lavington Luxury Villa</a></h4>
+					  <p><i class="fa fa-map-marker"></i> Lavington, Nairobi</p>
+					  <p>Stunning 5-bedroom luxury villa in Lavington with a private garden, swimming pool, and state-of-the-art security system. Features high-end finishes and modern architecture.</p>
+					  <h6><i class="fa fa-object-group col_1"></i> 3500 sq ft <i class="fa fa-hotel col_1"></i> 5 Beds <i class="fa fa-tv col_1"></i>  TV</h6>
+					  <h6><i class="fa fa-home col_1"></i> 4 Baths <i class="fa fa-wrench col_1"></i> 3 Garage <i class="fa fa-building col_1"></i>  3 Balcony</h6>
+					  <div class="feature_2m_last_i clearfix">
+					    <h6><a href="detail.html"><i class="fa fa-user"></i> Westcare Agent <span class="pull-right"><i class="fa fa-calendar"></i> 3 weeks ago</span></a></h6>
+					  </div>
+					 </div>
+	  </div>
+	 </div>
+   </div>
+   <div class="listing_1 clearfix">
+     <div class="col-sm-4 space_all">
+	  <div class="listing_1l clearfix">
+	    <div class="home_inner_im clearfix">
+							    <div class="home_inner_im1 clearfix">
+								 <a href="detail.html"><img src="img/9.jpg" class="iw" alt="abc"></a>
+								</div>
+								<div class="home_inner_im2 clearfix">
+								 <h6 class="mgt"><a class="bg_1" href="detail.html">Featured</a></h6>
+								 <div class="home_inner_im2i text-center clearfix">
+								   <ul class="mgt">
+									<li><a href="detail.html"><i class="fa fa-link"></i></a></li>
+									<li><a href="detail.html"><i class="fa fa-video-camera"></i></a></li>
+									<li><a href="detail.html"><i class="fa fa-expand"></i></a></li>
+							     </ul>
+								 </div>
+								 <h4 class="col normal">$220,000 <a class="bg_4 pull-right" href="detail.html">For Sale</a></h4>
+								</div>
+							 </div>
+	  </div>
+	 </div>
+	 <div class="col-sm-8 space_all">
+	  <div class="listing_1r clearfix">
+	   <div class="feature_2m_last clearfix">
+					  <h4 class="mgt bold"><a href="detail.html">Parklands Townhouse</a></h4>
+					  <p><i class="fa fa-map-marker"></i> Parklands, Nairobi</p>
+					  <p>Charming 3-bedroom townhouse in Parklands with a private garden and modern interiors. Features an open-plan living area, updated kitchen, and community amenities.</p>
+					  <h6><i class="fa fa-object-group col_1"></i> 1600 sq ft <i class="fa fa-hotel col_1"></i> 3 Beds <i class="fa fa-tv col_1"></i>  TV</h6>
+					  <h6><i class="fa fa-home col_1"></i> 2 Baths <i class="fa fa-wrench col_1"></i> 1 Garage <i class="fa fa-building col_1"></i>  1 Balcony</h6>
+					  <div class="feature_2m_last_i clearfix">
+					    <h6><a href="detail.html"><i class="fa fa-user"></i> Westcare Agent <span class="pull-right"><i class="fa fa-calendar"></i> 2 months ago</span></a></h6>
+					  </div>
+					 </div>
+	  </div>
+	 </div>
+   </div>
+   <div class="product_1_last text-center clearfix">
+	  <div class="col-sm-12">
+	   <ul>
+	    <li><a href="detail.html"><i class="fa fa-chevron-left"></i></a></li>
+	    <li class="act"><a href="detail.html">1</a></li>
+		<li><a href="detail.html">2</a></li>
+		<li><a href="detail.html">3</a></li>
+		<li><a href="detail.html">4</a></li>
+		<li><a href="detail.html">5</a></li>
+		<li><a href="detail.html">6</a></li>
+		<li><a href="detail.html"><i class="fa fa-chevron-right"></i></a></li>
+	   </ul>
+	  </div>
+	 </div>
+  </div>
+ </div>
+</section>
+
+<section id="enquiry">
+<div class="enquiry_m bg_back">
+   <div class="container">
+  <div class="row">
+    <div class="enquiry_1 text-center clearfix">
+<!-- BEGIN REAL WESTCARE PROPERTIES LTD LISTINGS -->
+<div class="listing_1 clearfix">
+	<div class="col-sm-4 space_all">
+		<div class="listing_1l clearfix">
+			<div class="home_inner_im clearfix">
+				<div class="home_inner_im1 clearfix">
+					<a href="#"><img src="img/real/kiambu-4br-kiingo.jpg" class="iw" alt="4 Bedroom House To Let In Kiambu Town Kihingo"></a>
+				</div>
+				<div class="home_inner_im2 clearfix">
+					<h6 class="mgt"><a class="bg_1" href="#">Featured</a></h6>
+					<div class="home_inner_im2i text-center clearfix">
+						<ul class="mgt">
+							<li><a href="#"><i class="fa fa-link"></i></a></li>
+							<li><a href="#"><i class="fa fa-video-camera"></i></a></li>
+							<li><a href="#"><i class="fa fa-expand"></i></a></li>
+						</ul>
+					</div>
+					<h4 class="col normal">KES 60,000/Mo <a class="bg_4 pull-right" href="#">For Rent</a></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-8 space_all">
+		<div class="listing_1r clearfix">
+			<div class="feature_2m_last clearfix">
+				<h4 class="mgt bold"><a href="#">4 Bedroom House To Let In Kiambu Town Kihingo</a></h4>
+				<p><i class="fa fa-map-marker"></i> Kiambu Town, Kihingo</p>
+				<p>Spacious 4-bedroom master ensuite house to let in Kihingo, Kiambu Town. Modern finishes, secure compound, ample parking, and close to amenities.</p>
+				<h6><i class="fa fa-hotel col_1"></i> 4 Beds <i class="fa fa-home col_1"></i> 3 Baths</h6>
+				<div class="feature_2m_last_i clearfix">
+					<h6><a href="#"><i class="fa fa-user"></i> Westcare Properties Ltd <span class="pull-right"><i class="fa fa-calendar"></i> Available Now</span></a></h6>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="listing_1 clearfix">
+	<div class="col-sm-4 space_all">
+		<div class="listing_1l clearfix">
+			<div class="home_inner_im clearfix">
+				<div class="home_inner_im1 clearfix">
+					<a href="#"><img src="img/real/riabai-4br-maisonette.jpg" class="iw" alt="4 Bedroom Maisonette To Let In Riabai – Kiambu Road"></a>
+				</div>
+				<div class="home_inner_im2 clearfix">
+					<h6 class="mgt"><a class="bg_1" href="#">Featured</a></h6>
+					<div class="home_inner_im2i text-center clearfix">
+						<ul class="mgt">
+							<li><a href="#"><i class="fa fa-link"></i></a></li>
+							<li><a href="#"><i class="fa fa-video-camera"></i></a></li>
+							<li><a href="#"><i class="fa fa-expand"></i></a></li>
+						</ul>
+					</div>
+					<h4 class="col normal">KES 85,000/Mo <a class="bg_4 pull-right" href="#">For Rent</a></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-8 space_all">
+		<div class="listing_1r clearfix">
+			<div class="feature_2m_last clearfix">
+				<h4 class="mgt bold"><a href="#">4 Bedroom Maisonette To Let In Riabai – Kiambu Road</a></h4>
+				<p><i class="fa fa-map-marker"></i> Riabai, Kiambu Road</p>
+				<p>Modern 4-bedroom maisonette to let in Riabai, Kiambu Road. All ensuite bedrooms, spacious living area, and secure neighborhood.</p>
+				<h6><i class="fa fa-hotel col_1"></i> 4 Beds <i class="fa fa-home col_1"></i> 4 Baths</h6>
+				<div class="feature_2m_last_i clearfix">
+					<h6><a href="#"><i class="fa fa-user"></i> Westcare Properties Ltd <span class="pull-right"><i class="fa fa-calendar"></i> Available Now</span></a></h6>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="listing_1 clearfix">
+	<div class="col-sm-4 space_all">
+		<div class="listing_1l clearfix">
+			<div class="home_inner_im clearfix">
+				<div class="home_inner_im1 clearfix">
+					<a href="#"><img src="img/real/kirigiti-2br-allensuite.jpg" class="iw" alt="2 Bedroom All-Ensuite To Let – Kirigiti, Kiambu Road"></a>
+				</div>
+				<div class="home_inner_im2 clearfix">
+					<h6 class="mgt"><a class="bg_1" href="#">Featured</a></h6>
+					<div class="home_inner_im2i text-center clearfix">
+						<ul class="mgt">
+							<li><a href="#"><i class="fa fa-link"></i></a></li>
+							<li><a href="#"><i class="fa fa-video-camera"></i></a></li>
+							<li><a href="#"><i class="fa fa-expand"></i></a></li>
+						</ul>
+					</div>
+					<h4 class="col normal">KES 40,000/Mo <a class="bg_4 pull-right" href="#">For Lease</a></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-8 space_all">
+		<div class="listing_1r clearfix">
+			<div class="feature_2m_last clearfix">
+				<h4 class="mgt bold"><a href="#">2 Bedroom All-Ensuite To Let – Kirigiti, Kiambu Road</a></h4>
+				<p><i class="fa fa-map-marker"></i> Kirigiti, Kiambu Road</p>
+				<p>2-bedroom all-ensuite apartment to let in Kirigiti, Kiambu Road. Modern design, ample parking, and close to public transport.</p>
+				<h6><i class="fa fa-hotel col_1"></i> 2 Beds <i class="fa fa-home col_1"></i> 2 Baths</h6>
+				<div class="feature_2m_last_i clearfix">
+					<h6><a href="#"><i class="fa fa-user"></i> Westcare Properties Ltd <span class="pull-right"><i class="fa fa-calendar"></i> Available Now</span></a></h6>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+   secondaryNavTopPosition = secondaryNav.offset().top;
+	$(window).on('scroll', function(){
+		if($(window).scrollTop() > secondaryNavTopPosition ) {
+			secondaryNav.addClass('is-fixed');	
+		} else {
+			secondaryNav.removeClass('is-fixed');
+		}
+	});	
+	
+});
+</script>
+<!-- WhatsApp floating button -->
+<a class="whatsapp-button" href="https://wa.me/254723466916" target="_blank" aria-label="Chat on WhatsApp"><i class="fa fa-whatsapp"></i></a>
+</body>
+ 
+</html>
