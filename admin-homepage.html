@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Westcare Properties Ltd - Homepage Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #2e7d32;
+            --secondary-green: #4caf50;
+            --dark-green: #1b5e20;
+            --light-gray: #f8f9fa;
+            --medium-gray: #6c757d;
+            --dark-gray: #343a40;
+            --white: #ffffff;
+            --black: #000000;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--light-gray);
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--dark-gray);
+            margin: 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .form-control {
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 10px 15px;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 0.2rem rgba(46, 125, 50, 0.25);
+        }
+
+        .textarea-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .image-upload-area {
+            border: 2px dashed var(--medium-gray);
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            background: var(--light-gray);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .image-upload-area:hover {
+            border-color: var(--primary-green);
+            background: #f0f8f0;
+        }
+
+        .current-image {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-item {
+            background: var(--light-gray);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary-green);
+        }
+
+        .testimonial-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-name {
+            font-weight: bold;
+            color: var(--dark-gray);
+        }
+
+        .feature-item {
+            background: var(--light-gray);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-right: 15px;
+            float: left;
+        }
+
+        .btn-save {
+            background: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-save:hover {
+            background: var(--dark-green);
+        }
+
+        .btn-add {
+            background: var(--secondary-green);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .file-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="alert alert-success" id="saveAlert" style="display: none;">
+            <i class="fas fa-check-circle"></i> Changes saved successfully!
+        </div>
+
+        <!-- Hero Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h3 class="section-title"><i class="fas fa-image text-success me-2"></i>Hero Section</h3>
+                <button class="btn-save" onclick="saveHeroSection()">Save Changes</button>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">Main Heading</label>
+                        <input type="text" class="form-control" id="heroHeading" value="Find Your Dream Home in Nairobi">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Subheading</label>
+                        <textarea class="form-control textarea-control" id="heroSubheading">Westcare Properties Ltd is Nairobi's premier real estate company, specializing in property sales, rentals, land acquisition, and property management services.</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Button Text</label>
+                        <input type="text" class="form-control" id="heroButtonText" value="Explore Properties">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Button Link</label>
+                        <input type="text" class="form-control" id="heroButtonLink" value="listing.html">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="form-label">Hero Background Image</label>
+                        <div class="image-upload-area" onclick="document.getElementById('heroImageInput').click()">
+                            <img id="heroImagePreview" src="img/hero-bg.jpg" alt="Hero Image" class="current-image">
+                            <p>Click to change hero background image</p>
+                        </div>
+                        <input type="file" id="heroImageInput" class="file-input" accept="image/*">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Us Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h3 class="section-title"><i class="fas fa-star text-success me-2"></i>Why Choose Us</h3>
+                <button class="btn-save" onclick="saveWhyChooseUs()">Save Changes</button>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Section Title</label>
+                <input type="text" class="form-control" id="whyChooseTitle" value="Why Choose Westcare Properties Ltd?">
+            </div>
+
+            <div id="featuresList">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-home"></i></div>
+                    <div class="form-group" style="margin-left: 55px;">
+                        <label class="form-label">Feature Title</label>
+                        <input type="text" class="form-control" value="Expert Local Knowledge">
+                        <label class="form-label" style="margin-top: 10px;">Feature Description</label>
+                        <textarea class="form-control textarea-control" style="height: 80px;">Our team has over a decade of experience in the Nairobi real estate market, providing expert guidance on property investments.</textarea>
+                        <button class="btn-delete" style="margin-top: 10px;">Remove Feature</button>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="form-group" style="margin-left: 55px;">
+                        <label class="form-label">Feature Title</label>
+                        <input type="text" class="form-control" value="Trusted & Transparent">
+                        <label class="form-label" style="margin-top: 10px;">Feature Description</label>
+                        <textarea class="form-control textarea-control" style="height: 80px;">We believe in complete transparency in all our dealings, ensuring you make informed decisions about your property investments.</textarea>
+                        <button class="btn-delete" style="margin-top: 10px;">Remove Feature</button>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-handshake"></i></div>
+                    <div class="form-group" style="margin-left: 55px;">
+                        <label class="form-label">Feature Title</label>
+                        <input type="text" class="form-control" value="Personalized Service">
+                        <label class="form-label" style="margin-top: 10px;">Feature Description</label>
+                        <textarea class="form-control textarea-control" style="height: 80px;">Every client receives personalized attention and customized solutions tailored to their specific property needs and goals.</textarea>
+                        <button class="btn-delete" style="margin-top: 10px;">Remove Feature</button>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                    <div class="form-group" style="margin-left: 55px;">
+                        <label class="form-label">Feature Title</label>
+                        <input type="text" class="form-control" value="24/7 Support">
+                        <label class="form-label" style="margin-top: 10px;">Feature Description</label>
+                        <textarea class="form-control textarea-control" style="height: 80px;">Our dedicated support team is available around the clock to assist you with any property-related queries or concerns.</textarea>
+                        <button class="btn-delete" style="margin-top: 10px;">Remove Feature</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-add" onclick="addFeature()">
+                <i class="fas fa-plus me-2"></i>Add New Feature
+            </button>
+        </div>
+
+        <!-- Testimonials Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h3 class="section-title"><i class="fas fa-comments text-success me-2"></i>Testimonials</h3>
+                <button class="btn-save" onclick="saveTestimonials()">Save Changes</button>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Section Title</label>
+                <input type="text" class="form-control" id="testimonialsTitle" value="What Our Clients Say">
+            </div>
+
+            <div id="testimonialsList">
+                <div class="testimonial-item">
+                    <div class="testimonial-header">
+                        <span class="testimonial-name">Sarah Wanjiku</span>
+                        <button class="btn-delete">Remove</button>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Testimonial Text</label>
+                        <textarea class="form-control textarea-control">"Westcare Properties Ltd helped me find my dream home in Karen. Their knowledge of the Nairobi market and personalized service made the entire process smooth and stress-free. Highly recommended!"</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Client Name</label>
+                        <input type="text" class="form-control" value="Sarah Wanjiku">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Client Title/Location</label>
+                        <input type="text" class="form-control" value="Homeowner, Karen">
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-header">
+                        <span class="testimonial-name">David Kiprop</span>
+                        <button class="btn-delete">Remove</button>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Testimonial Text</label>
+                        <textarea class="form-control textarea-control">"As an investor, I needed a reliable partner in the Nairobi property market. Westcare Properties Ltd delivered exceptional service, helping me identify profitable opportunities in Westlands. Their market insights are invaluable."</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Client Name</label>
+                        <input type="text" class="form-control" value="David Kiprop">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Client Title/Location</label>
+                        <input type="text" class="form-control" value="Property Investor">
+                    </div>
+                </div>
+
+                <div class="testimonial-item">
+                    <div class="testimonial-header">
+                        <span class="testimonial-name">Grace Achieng</span>
+                        <button class="btn-delete">Remove</button>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Testimonial Text</label>
+                        <textarea class="form-control textarea-control">"The team at Westcare Properties Ltd went above and beyond to help me sell my Kilimani apartment. Their marketing strategy and negotiation skills resulted in a quick sale at the best possible price. Thank you!"</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Client Name</label>
+                        <input type="text" class="form-control" value="Grace Achieng">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Client Title/Location</label>
+                        <input type="text" class="form-control" value="Seller, Kilimani">
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-add" onclick="addTestimonial()">
+                <i class="fas fa-plus me-2"></i>Add New Testimonial
+            </button>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="content-section">
+            <div class="section-header">
+                <h3 class="section-title"><i class="fas fa-bullhorn text-success me-2"></i>Call-to-Action Section</h3>
+                <button class="btn-save" onclick="saveCTASection()">Save Changes</button>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">CTA Title</label>
+                <input type="text" class="form-control" id="ctaTitle" value="Ready to Find Your Dream Property?">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">CTA Description</label>
+                <textarea class="form-control textarea-control" id="ctaDescription">Contact Westcare Properties Ltd today for expert real estate services in Kenya. Whether you're buying, selling, or investing, our experienced team is here to help you achieve your property goals.</textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Button Text</label>
+                <input type="text" class="form-control" id="ctaButtonText" value="Contact Us Today">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Button Link</label>
+                <input type="text" class="form-control" id="ctaButtonLink" value="contact.html">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Security check
+        if (localStorage.getItem('adminLoggedIn') !== 'true') {
+            window.location.href = 'admin-login.html';
+        }
+
+        // Load saved data
+        function loadHomepageData() {
+            const homepageData = JSON.parse(localStorage.getItem('homepageData')) || {};
+
+            // Hero section
+            document.getElementById('heroHeading').value = homepageData.heroHeading || 'Find Your Dream Home in Nairobi';
+            document.getElementById('heroSubheading').value = homepageData.heroSubheading || 'Westcare Properties Ltd is Nairobi\'s premier real estate company...';
+            document.getElementById('heroButtonText').value = homepageData.heroButtonText || 'Explore Properties';
+            document.getElementById('heroButtonLink').value = homepageData.heroButtonLink || 'listing.html';
+            if (homepageData.heroImage) {
+                document.getElementById('heroImagePreview').src = homepageData.heroImage;
+            }
+
+            // Why Choose Us
+            document.getElementById('whyChooseTitle').value = homepageData.whyChooseTitle || 'Why Choose Westcare Properties Ltd?';
+
+            // Testimonials
+            document.getElementById('testimonialsTitle').value = homepageData.testimonialsTitle || 'What Our Clients Say';
+
+            // CTA Section
+            document.getElementById('ctaTitle').value = homepageData.ctaTitle || 'Ready to Find Your Dream Property?';
+            document.getElementById('ctaDescription').value = homepageData.ctaDescription || 'Contact Westcare Properties Ltd today...';
+            document.getElementById('ctaButtonText').value = homepageData.ctaButtonText || 'Contact Us Today';
+            document.getElementById('ctaButtonLink').value = homepageData.ctaButtonLink || 'contact.html';
+        }
+
+        // Save functions
+        function saveHeroSection() {
+            const homepageData = JSON.parse(localStorage.getItem('homepageData')) || {};
+            homepageData.heroHeading = document.getElementById('heroHeading').value;
+            homepageData.heroSubheading = document.getElementById('heroSubheading').value;
+            homepageData.heroButtonText = document.getElementById('heroButtonText').value;
+            homepageData.heroButtonLink = document.getElementById('heroButtonLink').value;
+            localStorage.setItem('homepageData', JSON.stringify(homepageData));
+            showSaveAlert();
+        }
+
+        function saveWhyChooseUs() {
+            const homepageData = JSON.parse(localStorage.getItem('homepageData')) || {};
+            homepageData.whyChooseTitle = document.getElementById('whyChooseTitle').value;
+            localStorage.setItem('homepageData', JSON.stringify(homepageData));
+            showSaveAlert();
+        }
+
+        function saveTestimonials() {
+            const homepageData = JSON.parse(localStorage.getItem('homepageData')) || {};
+            homepageData.testimonialsTitle = document.getElementById('testimonialsTitle').value;
+            localStorage.setItem('homepageData', JSON.stringify(homepageData));
+            showSaveAlert();
+        }
+
+        function saveCTASection() {
+            const homepageData = JSON.parse(localStorage.getItem('homepageData')) || {};
+            homepageData.ctaTitle = document.getElementById('ctaTitle').value;
+            homepageData.ctaDescription = document.getElementById('ctaDescription').value;
+            homepageData.ctaButtonText = document.getElementById('ctaButtonText').value;
+            homepageData.ctaButtonLink = document.getElementById('ctaButtonLink').value;
+            localStorage.setItem('homepageData', JSON.stringify(homepageData));
+            showSaveAlert();
+        }
+
+        // Add new feature
+        function addFeature() {
+            const featuresList = document.getElementById('featuresList');
+            const featureItem = document.createElement('div');
+            featureItem.className = 'feature-item';
+            featureItem.innerHTML = `
+                <div class="feature-icon"><i class="fas fa-star"></i></div>
+                <div class="form-group" style="margin-left: 55px;">
+                    <label class="form-label">Feature Title</label>
+                    <input type="text" class="form-control" value="New Feature">
+                    <label class="form-label" style="margin-top: 10px;">Feature Description</label>
+                    <textarea class="form-control textarea-control" style="height: 80px;">Feature description here...</textarea>
+                    <button class="btn-delete" style="margin-top: 10px;" onclick="this.parentElement.parentElement.remove()">Remove Feature</button>
+                </div>
+            `;
+            featuresList.appendChild(featureItem);
+        }
+
+        // Add new testimonial
+        function addTestimonial() {
+            const testimonialsList = document.getElementById('testimonialsList');
+            const testimonialItem = document.createElement('div');
+            testimonialItem.className = 'testimonial-item';
+            testimonialItem.innerHTML = `
+                <div class="testimonial-header">
+                    <span class="testimonial-name">New Client</span>
+                    <button class="btn-delete" onclick="this.parentElement.parentElement.remove()">Remove</button>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Testimonial Text</label>
+                    <textarea class="form-control textarea-control">"Testimonial text here..."</textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Client Name</label>
+                    <input type="text" class="form-control" value="Client Name">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Client Title/Location</label>
+                    <input type="text" class="form-control" value="Client Title">
+                </div>
+            `;
+            testimonialsList.appendChild(testimonialItem);
+        }
+
+        // Image upload handling
+        document.getElementById('heroImageInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('heroImagePreview').src = e.target.result;
+                    const homepageData = JSON.parse(localStorage.getItem('homepageData')) || {};
+                    homepageData.heroImage = e.target.result;
+                    localStorage.setItem('homepageData', JSON.stringify(homepageData));
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Show save alert
+        function showSaveAlert() {
+            const alert = document.getElementById('saveAlert');
+            alert.style.display = 'block';
+            setTimeout(() => {
+                alert.style.display = 'none';
+            }, 3000);
+        }
+
+        // Initialize
+        loadHomepageData();
+    </script>
+</body>
+</html>

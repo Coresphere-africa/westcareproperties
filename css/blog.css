@@ -1,0 +1,82 @@
+/*
+Template Name: The Prop
+File: Layout CSS
+Author: TemplatesOnWeb
+Author URI: https://www.templateonweb.com/
+Licence: <a href="https://www.templateonweb.com/license">Website Template Licence</a>
+*/
+/*********************blog****************/
+.center_list {
+    background-image: url(../img/2.jpg);
+    background-position: center;
+}
+.center_blog {
+padding-top:100px;
+padding-bottom:100px;
+background:#95c41f1f; 
+}
+.blog_pg_1l1 img{
+height:420px; 
+ }
+#blog_pg{
+padding-top:50px;
+padding-bottom:50px; 
+ }
+.blog_pg_1l1 ul li{
+ display:inline-block;
+ margin-right:20px;
+ }
+.blog_pg_1l1 ul li i{
+ margin-right:5px;
+ }
+.blog_pg_1l1i{
+background:#95c41f1f; 
+padding:25px 15px 30px 15px; 
+ }
+.blog_pg_1l1{
+margin-top:20px; 
+ }
+.blog_pg_1r1 .form-control {
+    height: 45px;
+    font-size: 16px;
+}
+.blog_pg_1r1 .btn {
+    margin-left: 0!important;
+    background: #95c41f;
+    border-color: #95c41f;
+    padding: 11.5px 20px;
+}
+.blog_pg_1r1{
+padding: 20px 15px;
+background: #95c41f1f; 
+ }
+/*********************blog_end****************/
+
+@media screen and (max-width : 767px){
+.blog_pg_1l1i {
+text-align:center; 
+ }
+.blog_pg_1r {
+margin-top:15px; 
+ }
+.blog_pg_1r .footer_1i1{
+text-align:center; 
+ }
+.blog_pg_1l1 img{
+height:auto; 
+ }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+
+ }
+@media (min-width:992px) and (max-width:1200px) {
+
+ }
+@media (min-width:1201px) and (max-width:1350px) {
+
+ }
+
+
+
+

@@ -1,0 +1,89 @@
+/*
+Template Name: The Prop
+File: Layout CSS
+Author: TemplatesOnWeb
+Author URI: https://www.templateonweb.com/
+Licence: <a href="https://www.templateonweb.com/license">Website Template Licence</a>
+*/
+/*********************list****************/
+.center_list {
+    background-image: url(../img/2.jpg);
+    background-position: center;
+}
+#listing{
+padding-top:50px;
+padding-bottom:50px; 
+ }
+.listing_t{
+background:#95c41f1f;
+padding:20px;
+ }
+.listing_1{
+margin-top:30px; 
+ }
+.listing_tr .form-control{
+height:40px;
+border-radius:0;
+width:250px;
+border-color:#bcff14;
+font-size:16px; 
+ }
+.listing_tl h4{
+margin-top:8px; 
+ }
+.home_inner_im2 h4{
+margin-top:90px;
+padding-left:10px;
+padding-right:10px; 
+ }
+.feature_2m_last{
+ min-height:303px;
+ padding: 20px 15px 20px 15px; 
+ }
+.home_inner_im {
+ min-height:303px;
+ }
+/*********************list_end****************/
+
+@media screen and (max-width : 767px){
+.home_inner_im2{
+min-height:280px; 
+ }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+.home_inner_im{
+min-height:280px;
+ }
+.feature_2m_last p{
+font-size:14px;
+margin-top:10px; 
+ }
+.feature_2m_last h6{
+margin-top:10px; 
+ }
+.feature_2m_last{
+min-height:280px;
+ }
+ }
+@media (min-width:992px) and (max-width:1200px) {
+.home_inner_im{
+min-height:280px;
+ }
+.feature_2m_last p{
+margin-top:10px; 
+ }
+.feature_2m_last h6{
+margin-top:10px; 
+ }
+.feature_2m_last{
+min-height:280px;
+ }
+ }
+@media (min-width:1201px) and (max-width:1350px) {
+
+ }
+
+
+
+
